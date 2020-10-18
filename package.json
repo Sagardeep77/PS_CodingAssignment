@@ -13,7 +13,8 @@
         "serve:ssr": "node dist/server",
         "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
         "build:client-and-server-bundles": "ng build --prod=true --aot=true --output-hashing=all && gulp purifyCSS && ng run check:server:production --bundleDependencies=all",
-        "ssr:serve": "nodemon --watch src/ -e ts,html,scss --exec 'npm run dev:ssr'"
+        "dev:serve": "nodemon --watch src/ -e ts,html,scss --exec 'npm run dev:ssr'",
+        "ssr:serve": "npm run build:ssr && npm run serve:ssr"
     },
     "private": true,
     "dependencies": {
