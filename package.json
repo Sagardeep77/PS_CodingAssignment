@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve",
+        "start": "npm run serve:ssr",
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
@@ -14,7 +14,8 @@
         "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
         "build:client-and-server-bundles": "ng build --prod=true --aot=true --output-hashing=all && gulp purifyCSS && ng run check:server:production --bundleDependencies=all",
         "dev:serve": "nodemon --watch src/ -e ts,html,scss --exec 'npm run dev:ssr'",
-        "ssr:serve": "npm run build:ssr && npm run serve:ssr"
+        "ssr:serve": "npm run build:ssr && npm run serve:ssr",
+        "heroku-postbuild": "npm run build:ssr"
     },
     "private": true,
     "dependencies": {
@@ -38,7 +39,8 @@
         "purify-css": "^1.2.5",
         "rxjs": "~6.4.0",
         "tslib": "^1.10.0",
-        "zone.js": "~0.9.1"
+        "zone.js": "~0.9.1",
+        "typescript": "~3.5.3"
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~0.803.22",
@@ -65,5 +67,9 @@
         "tslint": "~5.15.0",
         "typescript": "~3.5.3",
         "webpack-cli": "^3.1.0"
+    },
+    "engines": {
+        "node": "12.14.1",
+        "npm": "6.12.6"
     }
 }
