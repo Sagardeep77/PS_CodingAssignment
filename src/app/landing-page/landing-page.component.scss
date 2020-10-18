@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.box-title {
+    text-align: center;
+    background-color: blanchedalmond;
+    border-radius: 4px;
+}
+
+.box-header {
+    background-color: gray;
+    color: black;
+    height: 10vh;
+}
+
+.flex-container {
+    margin: 10px;
+}
+
+.box-container {
+    // max-height: 90vh;
+    color: black;
+    border-radius: 4px;
+}
+
+.cards-container {
+    width: 100%;
+}
+
+.box-filter {
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filter-container {
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    max-width: 200px;
+}
+
+button {
+    background-color: rgb(81, 155, 81);
+}
+
+.active {
+    background-color: rgb(88, 206, 117);
+    ;
+    border: 1px black solid;
+    border-radius: 2px;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    text-align: center;
+}
+
+.row-cards {
+    margin-bottom: 15px;
+}
+
+.column-cards {
+    margin: 0px auto 15px auto;
+}

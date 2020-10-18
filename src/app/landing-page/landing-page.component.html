@@ -1,0 +1,103 @@
+<div id="container">
+    <div class="box-header">
+        <h3>SpaceX Launch Programs</h3>
+    </div>
+    <div class="flex-container" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly start" fxLayoutGap="grid">
+
+        <!-- Container for filter box elements starts-->
+        <div id="filterBox" class="box-container filter-container" fxFlex="20%" fxFlex.xs="100%">
+
+            <!--Filter box for Year filter starts-->
+            <div class="box-filter">
+                <div class="box-title">
+                    <b>Launch Year</b>
+                </div>
+                <div class="box-body">
+                    <!-- Table for displaying years stored in totalYears 2d array starts-->
+                    <table>
+                        <tbody>
+                            <tr *ngFor="let years of totalYears">
+                                <td *ngFor="let year of years">
+                                    <button mat-raised-button color="primary" [ngClass]="{active:selectedYear===year}" (click)="checkFilters(year)">{{year}}</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- Table for displaying years stored in totalYears 2d array emds-->
+                </div>
+            </div>
+            <!--Filter box for YEAR filter ends-->
+
+
+            <!--Filter box for Succesful launch starts-->
+            <div class="box-filter">
+                <div class="box-title">
+                    <b><u>Successful Launch</u></b>
+                </div>
+                <div class="box-body">
+                    <!-- filter options available for successful launch starts-->
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <button mat-raised-button (click)="checkFilters();setSuccess(true,'launch')" [ngClass]=" {active : successLaunch}">True</button>
+                                </td>
+                                <td>
+                                    <button mat-raised-button (click)="checkFilters();setSuccess(false,'launch')" [ngClass]=" {active : !successLaunch}">False</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- filter options available for successful launch ends-->
+
+                </div>
+            </div>
+            <!--Filter box for Successful launch ends-->
+
+            <!--Filter box for Successful landing starts-->
+            <div class="box-filter">
+                <div class="box-title">
+                    <b><u>Successful Landing</u></b>
+                </div>
+                <div class="box-body">
+                    <!-- filter options available for success landing starts-->
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <button mat-raised-button (click)="checkFilters();setSuccess(true,'landing')" [ngClass]=" {active : successLanding}">True</button>
+                                </td>
+                                <td>
+                                    <button mat-raised-button (click)="checkFilters();setSuccess(false,'landing')" [ngClass]=" {active : !successLanding}">False</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- filter options available for success landing starts-->
+                </div>
+            </div>
+        </div>
+
+        <!--Filter box for Successful landing ends-->
+
+
+        <!--Container for Filter box elements ends-->
+
+        <!-- Cards box element starts-->
+
+
+        <div id="cardsContainer" class="box-container cards-container" fxFlex="80%" fxFlex.xs="100%">
+            <div class="row-cards" fxLayoutAlign="space-evenly start" fxLayout="row wrap">
+                <div *ngFor="let card of filteredDataCard; trackBy:trackByMissionName" class="column-cards" fxFlex="23%" fxFlex.xs="70%" fxFlex.sm="40%" fxFlex.md="23%" fxFlex.lg="23%">
+                    <app-description-card [cardData]="card"></app-description-card>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards box element ends-->
+
+    </div>
+
+
+</div>

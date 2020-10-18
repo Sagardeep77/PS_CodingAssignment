@@ -1,0 +1,25 @@
+<div *ngIf="cardData">
+    <div class="card">
+        <mat-card style="height: 90%;">
+            <div class="card-content">
+                <img class="card-image" [src]="cardData.links.mission_patch_small" alt="photo of {{cardData.mission_name}}"><br>
+                <div style="height:30px;color: cornflowerblue;">
+                    {{cardData.mission_name}} #{{cardData.flight_number}}
+                </div>
+                <mat-card-content class="card-content-text">
+                    <b>Mission Ids</b>
+                    <div style="height: 40px;">
+                        <ul>
+                            <li *ngFor="let id of cardData.mission_id">
+                                {{id}}
+                            </li>
+                        </ul><br>
+                    </div>
+                    <b>Launch year</b> : {{cardData.launch_year}}<br>
+                    <b>Successful Launch</b> : {{cardData.launch_success}}<br>
+                    <b>Successful Landing</b> : {{cardData.land_success}}
+                </mat-card-content>
+            </div>
+        </mat-card>
+    </div>
+</div>
