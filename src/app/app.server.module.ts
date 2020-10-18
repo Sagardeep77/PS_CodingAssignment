@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ServerStateInterceptor } from './services/interceptor/serverstate.interceptor';
+import { ServerStateInterceptor } from './interceptor/serverstate.interceptor';
 import {FlexLayoutServerModule} from '@angular/flex-layout/server';
 
 @NgModule({

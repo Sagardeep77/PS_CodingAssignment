@@ -24,6 +24,8 @@ export class DataCommunicationService {
 
   getFilteredData(filters:any[]){
     let filter, endPoint="";
+
+
     
     filters.forEach(f => {
       if(f.name == "year"){
@@ -31,25 +33,13 @@ export class DataCommunicationService {
         endPoint += filter + f.value;
       }
       else if(f.name == "launch"){
-        if(f.value){
           filter = "&launch_success="
           endPoint += filter + f.value;
-        }
-        else{
-          filter = "";
-        }
       }
       else if(f.name == "landing"){
-        if(f.value){
           filter = "&land_success=";
           endPoint += filter + f.value;
-        }
-        else{
-          filter = "";
-        }
       }
-      
-
     });
     
     return this.httpClient.get(this.urlLandingPage + endPoint);

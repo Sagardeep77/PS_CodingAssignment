@@ -11,7 +11,7 @@ import { DescriptionCardComponent } from './description-card/description-card.co
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatGridListModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { BrowserStateInterceptor } from './services/interceptor/browserstate.interceptor';
+import { BrowserStateInterceptor } from './interceptor/browserstate.interceptor';
 
 @NgModule({
   declarations: [

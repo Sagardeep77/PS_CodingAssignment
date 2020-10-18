@@ -10,14 +10,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LandingPageComponent implements OnInit {
 
-  // totalYears = new Array<number>(100) ;
-  public successLanding: boolean = false;
-  public successLaunch: boolean = false;
+
+  public successLanding: boolean = true;
+  public successLaunch: boolean = true;
   public selectedYear: number;
 
-  // filteredDataCard: any[];
+  //To store the response array given by the end point . Showing as cards in the html 
   filteredDataCard = new Array<any>();
 
+  //Available years to apply filter
   totalYears = [
     [2006, 2007],
     [2008, 2009],
@@ -38,26 +39,29 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {
 
-    this.selectedYear = this.totalYears[0][0];
+    this.selectedYear = 2018;
     this.checkFilters(this.selectedYear);
   }
 
+
+  // Functioon to change the location path without refreshing the page.
+  // It uses the current location and manipulates the URL
   generateLocationPath() {
     let path = "year=" + this.selectedYear;
-    if (this.successLaunch) {
-      path += "?success_launch=" + this.successLaunch;
-    }
-    if (this.successLanding) {
-      path += "?success_landing=" + this.successLanding;
-    }
+    path += "?success_launch=" + this.successLaunch;
+    path += "?success_landing=" + this.successLanding;
 
     this.location.replaceState(path);
   }
 
+
+  //Function to check the filters applied filters and calls the API which in return gives the response.
+  /* Returned response is stored in filteredDataCars array which changes the DOM elements */
   checkFilters(year?) {
 
+
     if (year) {
-      this.selectedYear = year;
+      this.selectedYear = year; // if funcction is called by the Year element in DOM
     }
 
     let filteringData;
@@ -77,7 +81,7 @@ export class LandingPageComponent implements OnInit {
       }
     ];
 
-
+    //calling the API endpoint
     this.dataCommService.getFilteredData(filteringData).subscribe((res: any) => {
       this.filteredDataCard = JSON.parse(JSON.stringify(res));
       this.generateLocationPath();
@@ -85,15 +89,19 @@ export class LandingPageComponent implements OnInit {
 
   }
 
-  setSuccess(value,type){
-    if(type == "launch"){
+
+  //function to change the value  of launch and land filters. In the end Calls filters functioon to apply filter
+  setSuccess(value, type) {
+    if (type == "launch") {
       this.successLaunch = value;
     }
-    else if(type=="landing"){
+    else if (type == "landing") {
       this.successLanding = value;
     }
+    this.checkFilters();
   }
 
+  //function for tracking the DOM elements by mission_name (Angular's trackBy directtive helps to track the DOM elements)
   trackByMissionName(index: number, card: any): string {
     return card ? card.mission_name : "";
   }
