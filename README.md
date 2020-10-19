@@ -1,7 +1,7 @@
 # Check
 Check is a Angular web application which uses Server Side Rendering and shows user the SpaceX Launch Programs between year 2006 to 2020. It allows user to filter data according to Successful launch and Successful landing with the selected years.
 
-## Used Enggines and Technology version 
+## Used Engines and Technology version 
     node: "12.14.1"
     npm: "6.13.6"
     typescript: "~3.5.3"
