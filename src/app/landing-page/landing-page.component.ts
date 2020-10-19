@@ -15,6 +15,8 @@ export class LandingPageComponent implements OnInit {
   public successLaunch: boolean ;
   public selectedYear: number;
 
+  
+
   //To store the response array given by the end point . Showing as cards in the html 
   filteredDataCard = new Array<any>();
 
@@ -38,15 +40,15 @@ export class LandingPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    this.selectedYear = 2006;
-    this.checkFilters(this.selectedYear);
+    this.checkFilters();
   }
 
 
   // Functioon to change the location path without refreshing the page.
   // It uses the current location and manipulates the URL
   generateLocationPath() {
+
+   
     let path = "year=" + this.selectedYear;
     if(this.successLaunch!=undefined){
       path += "?success_launch=" + this.successLaunch;
@@ -66,6 +68,7 @@ export class LandingPageComponent implements OnInit {
 
     if (year) {
       this.selectedYear = year; // if funcction is called by the Year element in DOM
+      
     }
 
     let filteringData;

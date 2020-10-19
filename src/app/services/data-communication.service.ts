@@ -9,7 +9,8 @@ export class DataCommunicationService {
 
   /* API endpoints */
   urlLandingPage = "https://api.spaceXdata.com/v3/launches?limit=100";
-
+  urlFilter = "https://api.spaceXdata.com/v3/launches?";
+  private isFilterApplied = false;
   //useful variables & properties
   
   constructor(private httpClient:HttpClient) { 
@@ -25,27 +26,36 @@ export class DataCommunicationService {
   getFilteredData(filters:any[]){
     let filter, endPoint="";
 
-
-    
     filters.forEach(f => {
       if(f.name == "year"){
-        filter = "&launch_year=";
-        endPoint += filter + f.value;
+        if(f.value){
+          filter = "&launch_year=";
+          endPoint += filter + f.value;
+          this.isFilterApplied = true;
+        }
+        else{
+          
+        }
       }
       else if(f.name == "launch"){
           if(f.value != undefined){
             filter = "&launch_success="
-          endPoint += filter + f.value;
+            endPoint += filter + f.value;
+            this.isFilterApplied = true;
           }
       }
       else if(f.name == "landing"){
           if(f.value != undefined){
             filter = "&land_success=";
             endPoint += filter + f.value;
+            this.isFilterApplied = true;
           }
       }
     });
     
+    if(this.isFilterApplied = true){
+      return this.httpClient.get(this.urlFilter + endPoint);
+    }
     return this.httpClient.get(this.urlLandingPage + endPoint);
 
   }

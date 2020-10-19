@@ -14,11 +14,16 @@
 }
 
 .card-image {
-    height: 90px;
-    width: 90px;
+    background-color: rgb(221, 221, 221);
+    height: 150px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+mat-card {
+    padding: 6px;
 }
 
 mat-card-content {
@@ -26,7 +31,6 @@ mat-card-content {
 }
 
 .card-content {
-    background-color: rgb(221, 194, 154);
     height: 100%;
     padding: 5px;
 }
