@@ -42,10 +42,10 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <button mat-raised-button (click)="checkFilters();setSuccess(true,'launch')" [ngClass]=" {active : successLaunch}">True</button>
+                                        <button mat-raised-button (click)="setSuccess(true,'launch')" [ngClass]=" {active : successLaunch == true}">True</button>
                                     </td>
                                     <td>
-                                        <button mat-raised-button (click)="checkFilters();setSuccess(false,'launch')" [ngClass]=" {active : !successLaunch}">False</button>
+                                        <button mat-raised-button (click)="setSuccess(false,'launch')" [ngClass]=" {active : !successLaunch == false}">False</button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -67,10 +67,10 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <button mat-raised-button (click)="setSuccess(true,'landing')" [ngClass]=" {active : successLanding}">True</button>
+                                        <button mat-raised-button (click)="setSuccess(true,'landing')" [ngClass]=" {active : successLanding == true}">True</button>
                                     </td>
                                     <td>
-                                        <button mat-raised-button (click)="setSuccess(false,'landing')" [ngClass]=" {active : !successLanding}">False</button>
+                                        <button mat-raised-button (click)="setSuccess(false,'landing')" [ngClass]=" {active : successLanding==false }">False</button>
                                     </td>
                                 </tr>
                             </tbody>

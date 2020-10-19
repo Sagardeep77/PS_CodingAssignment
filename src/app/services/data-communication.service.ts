@@ -33,12 +33,16 @@ export class DataCommunicationService {
         endPoint += filter + f.value;
       }
       else if(f.name == "launch"){
-          filter = "&launch_success="
+          if(f.value != undefined){
+            filter = "&launch_success="
           endPoint += filter + f.value;
+          }
       }
       else if(f.name == "landing"){
-          filter = "&land_success=";
-          endPoint += filter + f.value;
+          if(f.value != undefined){
+            filter = "&land_success=";
+            endPoint += filter + f.value;
+          }
       }
     });
     

@@ -11,8 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class LandingPageComponent implements OnInit {
 
 
-  public successLanding: boolean = true;
-  public successLaunch: boolean = true;
+  public successLanding: boolean ;
+  public successLaunch: boolean ;
   public selectedYear: number;
 
   //To store the response array given by the end point . Showing as cards in the html 
@@ -39,7 +39,7 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {
 
-    this.selectedYear = 2018;
+    this.selectedYear = 2006;
     this.checkFilters(this.selectedYear);
   }
 
@@ -48,8 +48,12 @@ export class LandingPageComponent implements OnInit {
   // It uses the current location and manipulates the URL
   generateLocationPath() {
     let path = "year=" + this.selectedYear;
-    path += "?success_launch=" + this.successLaunch;
-    path += "?success_landing=" + this.successLanding;
+    if(this.successLaunch!=undefined){
+      path += "?success_launch=" + this.successLaunch;
+    }
+    if(this.successLanding!=undefined){
+      path += "?success_landing=" + this.successLanding;
+    }
 
     this.location.replaceState(path);
   }

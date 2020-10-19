@@ -11,12 +11,9 @@ export class AppComponent implements OnInit{
   response : any;
 
 
-  constructor(private dataCommService: DataCommunicationService){}
+  constructor(){}
 
   ngOnInit(){
-    this.dataCommService.getLandingPageData().subscribe((res)=>{
-      this.response =JSON.stringify(res,undefined,2) ;
-    })
   }
 
 }
