@@ -28,24 +28,23 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 I have used the Agile methodology to develop the Web Application.
 
-1. Sprint-1 :
-    In this sprint, I have tried to develop the backbone of the software.
-        A. Web application should use Server Side Rendering(SSR) to deliver the page to the Client-Side.
-        B. I have used Angular 8 and Angular universal which in turns uses the node.js & Express framework for SSR.
+### 1. Sprint-1 :
+   - In this sprint, I have tried to develop the backbone of the software.
+     1. Web application should use Server Side Rendering(SSR) to deliver the page to the Client-Side.
+     1. I have used Angular 8 and Angular universal which in turns uses the node.js & Express framework for SSR.
 
-2. Sprint-2 :
-    In this sprint, I have tried to develop the UI and Functionality of the required web application.
-        A. I have used Angular material and Angular flex-layout to develop the Responsive UI.
-        B.
+### 1. Sprint-2 :
+   - In this sprint, I have tried to develop the UI and Functionality of the required web application.
+     1. I have used Angular material and Angular flex-layout to develop the Responsive UI.
 
-3. Sprint-3 :
-    In this sprint, I have optimized the application and tested the core functionalities of the application for production ready.
-        A. I have used the caching techinque to store the data of requested URL with memory-cache module {Key,value} = {Requested_url, response}.
-        B. Used Angular's Transfer state to intercept the api call from client side.
-        C. Used Purify Css to remove the dead Css and Compression npm module to send the compressed sized to the client.
-        D. Generated the lighthouse report and tested the application  on locaohost.
+### 1. Sprint-3 :
+   - In this sprint, I have optimized the application and tested the core functionalities of the application for production ready.
+     1. I have used the caching techinque to store the data of requested URL with memory-cache module {Key,value} = {Requested_url, response}.
+     1. Used Angular's Transfer state to intercept the api call from client side.
+     1. Used Purify Css to remove the dead Css and Compression npm module to send the compressed sized to the client.
+     1. Generated the lighthouse report and tested the application  on locaohost.
 
-4. Sprint-4 :
-    In this sprint, I have pushed my code to Github and deployed my application on heroku platform.
-        A. Fixed bugs and deployed the applicaion connected with Github.
-        B. Fixing bugs and testing the application in real-world.
+### 4. Sprint-4 :
+   - In this sprint, I have pushed my code to Github and deployed my application on heroku platform.
+     1. Fixed bugs and deployed the applicaion connected with Github.
+     1. Fixing bugs and testing the application in real-world.
