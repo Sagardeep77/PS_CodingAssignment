@@ -45,7 +45,7 @@
                                         <button mat-raised-button (click)="setSuccess(true,'launch')" [ngClass]=" {active : successLaunch == true}">True</button>
                                     </td>
                                     <td>
-                                        <button mat-raised-button (click)="setSuccess(false,'launch')" [ngClass]=" {active : !successLaunch == false}">False</button>
+                                        <button mat-raised-button (click)="setSuccess(false,'launch')" [ngClass]=" {active : successLaunch == false}">False</button>
                                     </td>
                                 </tr>
                             </tbody>
