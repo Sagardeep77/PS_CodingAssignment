@@ -36,6 +36,7 @@ I have used the Agile methodology to develop the Web Application.
 ### 1. Sprint-2 :
    - In this sprint, I have tried to develop the UI and Functionality of the required web application.
      1. I have used Angular material and Angular flex-layout to develop the Responsive UI.
+     1. Tested the application responsiveness and performance. 
 
 ### 1. Sprint-3 :
    - In this sprint, I have optimized the application and tested the core functionalities of the application for production ready.
@@ -48,3 +49,5 @@ I have used the Agile methodology to develop the Web Application.
    - In this sprint, I have pushed my code to Github and deployed my application on heroku platform.
      1. Fixed bugs and deployed the applicaion connected with Github.
      1. Fixing bugs and testing the application in real-world.
+     
+### Screenshots are attached in screenshot folder
