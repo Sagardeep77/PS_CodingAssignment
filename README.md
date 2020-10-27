@@ -16,20 +16,21 @@ Check is a Angular web application which uses Server Side Rendering and shows us
       - The main file which contains the Backend code for this project. Uses Express framework to serve the requests.
 
  #### src
-      - It contains all the front end code.
+      - This folder contains all the front end code.
       
 ####  components are created under src/app/components
+      -Below are the listed components used in front end development
       -description-card
       -landing-page
 
 ####  services are created under src/app/services
+      -Below is the service used to call the APIs and share data between components
       -data-communication.service.ts
 
 ####  interceptors are created under src/app/interceptors
+      -Belo are the interceptor files which intercepts the htpp requests at browser and at server end respectively.
       -browserstate.interceptor.ts
       -serverstate.interceptor.ts
-      
-#### Note : screenshots are placed under Screenshots folder
  
  ```
  .
@@ -109,10 +110,11 @@ Check is a Angular web application which uses Server Side Rendering and shows us
     └── webpack.server.config.js
 ```
 
-## Mobile View and Tablet View and Desktop View of the application are as respectively
+## Mobile View, Tablet View and Desktop View of the application are as respectively
 
-<img src="https://user-images.githubusercontent.com/25485584/96476704-32468500-1253-11eb-802b-dc7a446d7cad.jpg" width="200" height="400">
-<img src="https://user-images.githubusercontent.com/25485584/96476737-3a9ec000-1253-11eb-9719-449d93efe345.jpg" width="400" height="200">
+<img src="https://user-images.githubusercontent.com/25485584/97261567-18093a00-1845-11eb-90b1-4fe6d0911d46.png" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/25485584/97261570-19d2fd80-1845-11eb-94fb-7b9b57da6875.png" width="400" height="200">
+<img src="https://user-images.githubusercontent.com/25485584/97261574-1b9cc100-1845-11eb-8b9d-1f7ad810bc87.png" width="600" height="300">
 
 
 ## Approach for developing the project
@@ -124,13 +126,13 @@ I have used the Agile methodology to develop the Web Application.
      1. Web application should use Server Side Rendering(SSR) to deliver the page to the Client-Side.
      1. I have used Angular 8 and Angular universal which in turns uses the node.js & Express framework for SSR.
 
-### 1. Sprint-2 :
+### 2. Sprint-2 :
    - In this sprint, I have tried to develop the UI and Functionality of the required web application.
      1. I have used Angular material and Angular flex-layout to develop the Responsive UI.
      1. Tested the application responsiveness and performance in development environment. 
 
 
-### 1. Sprint-3 :
+### 3. Sprint-3 :
    - In this sprint, I have optimized the application and tested the core functionalities of the application for production ready.
      1. I have used the caching techinque to store the data of requested URL with memory-cache module {Key,value} = {Requested_url, response}.
      1. Used Angular's Transfer state to intercept the api call from client side.
@@ -139,15 +141,15 @@ I have used the Agile methodology to develop the Web Application.
 
 #### Screenshots of the lighthouse score before and after optimization
 
-#### 1. Before optimization. 
+#### a. Before optimization. 
 
-      <img alt="before optimization" src="https://user-images.githubusercontent.com/25485584/96479333-6e2f1980-1256-11eb-8303-73b7eb7e9c2a.png" width="500" height="100">
+  <img alt="before optimization" src="https://user-images.githubusercontent.com/25485584/96479333-6e2f1980-1256-11eb-8303-73b7eb7e9c2a.png" width="500" height="100">
   
-#### 2. After optimizing Transfer state using memory cache.
+#### b. After optimizing Transfer state using memory cache.
 
   <img alt="after transfer state optimization" src="https://user-images.githubusercontent.com/25485584/96479338-70917380-1256-11eb-8ca2-c717cbc2708e.png" width="500" height="100">
   
-#### 3. After compressing the production bundle size.
+#### c. After compressing the production bundle size.
 
   <img alt="after compression and purify css optimization" src="https://user-images.githubusercontent.com/25485584/96479342-71c2a080-1256-11eb-9ff4-41e7b46195ac.png" width="500" height="100">
 
