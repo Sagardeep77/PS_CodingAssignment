@@ -7,9 +7,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class DescriptionCardComponent implements OnInit {
   @Input() cardData: any;
-  constructor() { }
+  imgSrc="";
+  
+  constructor() { 
+  }
 
   ngOnInit() {
+    this.imgSrc = "../../assets/"+this.cardData.mission_name.split('/')[0] + ".png";
   }
 
 }

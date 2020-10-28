@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataCommunicationService } from '../services/data-communication.service';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-landing-page',
@@ -14,6 +15,11 @@ export class LandingPageComponent implements OnInit {
   public successLanding: boolean ;
   public successLaunch: boolean ;
   public selectedYear: number;
+
+  public isMobileView:boolean = false;
+  public isTabletView:boolean = false;
+  public isDesktopView:boolean = false;
+  public isXtraLargeView:boolean = false;
 
   
 
@@ -32,17 +38,63 @@ export class LandingPageComponent implements OnInit {
     [2020]
   ];
 
+  breakPoints  = {
+    mob:'(max-width: 700px)',
+    tab:'(min-width: 700px) and (max-width: 1024px)' ,
+    desk:'(min-width: 1024px) and (max-width: 1440px)',
+    xl:'(min-width: 1440px)'
+  }
 
   constructor(
     private dataCommService: DataCommunicationService,
     private location: Location,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    public breakPoinstObserver:BreakpointObserver
   ) { }
 
   ngOnInit() {
     this.checkFilters();
+    this.breakPoinstObserver.observe([
+      this.breakPoints.mob,
+      this.breakPoints.desk,
+      this.breakPoints.tab,
+      this.breakPoints.xl
+    ]).subscribe((result)=>{
+      if(result.breakpoints[this.breakPoints.mob]){
+        this.setView("mobile");
+      }
+      else if(result.breakpoints[this.breakPoints.tab]){
+        this.setView("tablet");
+      }
+      else if(result.breakpoints[this.breakPoints.desk]){
+        this.setView("desktop");
+      }
+      else{
+        this.setView("desktop");
+      }
+    })
   }
 
+
+  //ViewPort
+  setView(view:string){
+    this.isMobileView = false;
+    this.isDesktopView = false;
+    this.isTabletView = false;
+    this.isXtraLargeView = false;
+    if(view== "mobile"){
+      this.isMobileView = true;
+    }
+    else if(view == "tablet"){
+      this.isTabletView = true;
+    }
+    else if(view == "desktop"){
+      this.isDesktopView = true;
+    }
+    else{
+      this.isDesktopView = true;
+    }
+  }
 
   // Functioon to change the location path without refreshing the page.
   // It uses the current location and manipulates the URL

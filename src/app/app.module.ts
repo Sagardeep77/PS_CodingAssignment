@@ -5,19 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataCommunicationService } from './services/data-communication.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserStateInterceptor } from './interceptor/browserstate.interceptor';
+
+
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import { CommonModule } from '@angular/common';
 import { DescriptionCardComponent } from './description-card/description-card.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCardModule, MatGridListModule } from '@angular/material';
+import {LayoutModule,BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { BrowserStateInterceptor } from './interceptor/browserstate.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    DescriptionCardComponent
+    DescriptionCardComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -28,6 +31,7 @@ import { BrowserStateInterceptor } from './interceptor/browserstate.interceptor'
     FlexLayoutModule,
     BrowserTransferStateModule,
     AppRoutingModule,
+    LayoutModule,
     BrowserAnimationsModule
   ],
   providers: [DataCommunicationService,{

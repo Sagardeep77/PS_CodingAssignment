@@ -5,7 +5,7 @@
     <div class="flex-container" fxLayout="row wrap" fxLayout.md="row wrap" fxLayout.sm="row wrap" fxLayout.xs="column" fxLayoutAlign="space-evenly start" fxLayoutGap="grid">
 
         <!-- Container for filter box elements starts-->
-        <div id="containerBox" fxFlex="25%" fxFlex.xs="100%" class="box-container ">
+        <div id="filterContainerBox" fxFlex="25%" fxFlex.xs="100%" class="box-container ">
             <div class="filter-container">
                 <div class="box-header">
                     <b>Filters</b>
@@ -90,13 +90,26 @@
 
 
         <div id="cardsContainer" class="box-container cards-container" fxFlex="75%" fxFlex.xs="100%">
-            <div *ngIf="filteredDataCard.length>0" class="row-cards" fxLayout="row wrap" fxLayout.xs="column">
-                <div *ngFor="let card of filteredDataCard; trackBy:trackByMissionName" class="column-cards" fxFlex="23%" fxFlex.xs="100%" fxFlex.sm="50%" fxFlex.md="50%">
-                    <app-description-card [cardData]="card"></app-description-card>
+            <div *ngIf="filteredDataCard.length>0" class="row-cards">
+                <div *ngIf="isMobileView" fxLayout="row wrap" fxLayout.xs="column">
+                    <div *ngFor="let card of filteredDataCard; trackBy:trackByMissionName" class="column-cards" fxFlex="100%">
+                        <app-description-card [cardData]="card"></app-description-card>
+                    </div>
                 </div>
+                <div *ngIf="isTabletView" fxLayout="row wrap" fxLayout.xs="column">
+                    <div *ngFor="let card of filteredDataCard; trackBy:trackByMissionName" class="column-cards" fxFlex="50%">
+                        <app-description-card [cardData]="card"></app-description-card>
+                    </div>
+                </div>
+                <div *ngIf="isDesktopView" fxLayout="row wrap" fxLayout.xs="column">
+                    <div *ngFor="let card of filteredDataCard; trackBy:trackByMissionName" class="column-cards" fxFlex="23%">
+                        <app-description-card [cardData]="card"></app-description-card>
+                    </div>
+                </div>
+
             </div>
             <div *ngIf="filteredDataCard.length==0" class="row-cards" fxLayout="row wrap" fxLayout.xs="column">
-                <div class="box-title" fxFlex="80%" fxFlex.xs="200px">
+                <div class="box-title" fxFlex="80%" fxFlex.xs="160px">
                     <h2>
                         No Data available
                     </h2>
