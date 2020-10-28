@@ -142,19 +142,16 @@ I have used the Agile methodology to develop the Web Application.
 #### Screenshots of the lighthouse score before and after optimization with default filter Year=2006
 
 #### a. Before optimization. 
-
-  <img alt="before optimization" src="https://user-images.githubusercontent.com/25485584/96479333-6e2f1980-1256-11eb-8303-73b7eb7e9c2a.png" width="500" height="100">
-  
-#### b. After optimizing Transfer state using memory cache.
-
   <img alt="after transfer state optimization" src="https://user-images.githubusercontent.com/25485584/96479338-70917380-1256-11eb-8ca2-c717cbc2708e.png" width="500" height="100">
   
-#### c. After compressing the production bundle size.
 
+#### b. After optimizing Transfer state using memory cache.
   <img alt="after compression and purify css optimization" src="https://user-images.githubusercontent.com/25485584/96479342-71c2a080-1256-11eb-9ff4-41e7b46195ac.png" width="500" height="100">
   
+  
 #### Screenshot of the lighthouse score without filter
-  <img alt="after compression and purify css optimization without filter" src="https://user-images.githubusercontent.com/25485584/97292403-39801b00-1871-11eb-9f80-b18efdbcd002.png" width="500" height="100">
+<img alt="after compression and purify css optimization" src="https://user-images.githubusercontent.com/25485584/97445108-e8485800-1952-11eb-9639-276d17294e30.PNG" width="500" height="100">
+
 
 ### 4. Sprint-4 :
    - In this sprint, I have pushed my code to Github and deployed my application on heroku platform.
