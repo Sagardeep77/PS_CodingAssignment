@@ -168,8 +168,12 @@ Run `npm run dev:serve` for a dev server. Navigate to `http://localhost:4200/`. 
 Run `npm run ssr:serve ` to build in production mode and serve the project. Navigate to `http://localhost:4200/`. The build artifacts will be stored in the `dist/` directory. 
 
 ## Running unit tests
+
+### Run `ng test` 
+
 Testcases for the components functionality are wriiten in their respective components.spec.ts file.
 Total 6 testcases covered
+All of them are working.
 
 
 
