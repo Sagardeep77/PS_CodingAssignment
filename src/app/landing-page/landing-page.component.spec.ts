@@ -1,40 +1,74 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LandingPageComponent } from './landing-page.component';
+
+import { LayoutModule } from '@angular/cdk/layout';
+import { HttpClientModule } from '@angular/common/http';
+import { DebugElement } from '@angular/core';
+import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule, MatCardModule, MatGridListModule } from '@angular/material';
+import { BrowserTransferStateModule, By } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AppRoutingModule } from '../app-routing.module';
+import { AppComponent } from '../app.component';
+import { AppModule } from '../app.module';
+import { DescriptionCardComponent } from '../description-card/description-card.component';
+import { LandingPageComponent } from '../landing-page/landing-page.component';
+import { DataCommunicationService } from '../services/data-communication.service';
+
 
 describe('LandingPageComponent', () => {
-  let component: LandingPageComponent;
+  
+  let comp: LandingPageComponent;
   let fixture: ComponentFixture<LandingPageComponent>;
-
+  let de: DebugElement;
+  let el: HTMLElement;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LandingPageComponent ]
-    })
-    .compileComponents();
+      imports: [
+        RouterTestingModule,
+        HttpClientModule,
+    MatCardModule,
+    MatGridListModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    BrowserTransferStateModule,
+    AppRoutingModule,
+    LayoutModule,
+    BrowserAnimationsModule
+      ],
+      declarations: [
+        AppComponent,
+        LandingPageComponent,
+        DescriptionCardComponent,
+      ],
+      providers: [DataCommunicationService]
+    }).compileComponents();
   }));
 
-  beforeEach(() => {
+
+  beforeEach(()=>{
     fixture = TestBed.createComponent(LandingPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    comp = fixture.componentInstance;
+    de = fixture.debugElement.componentInstance;
+    el = de.nativeElement;
   });
 
-  it('should set year in=between and equal to 2006 an 2010', () => {
+  it('should set year in between and equal to 2006 an 2020', () => {
     let year;
     for(let start = 2006 ; start < 2021; start++){
-      year = component.checkFilters(start);
-      expect(component.selectedYear).toEqual(year);
+      comp.checkFilters(start);
+      expect(comp.selectedYear).toEqual(start);
     }
   });
 
   it('should set year as 2006 and success_launch= false and success_landing=false', () => {
     let year = 2006;
-    component.setSuccess(true,'launch');
-    component.setSuccess(false,'landing');
+    comp.setSuccess(true,'launch');
+    comp.setSuccess(false,'landing');
 
-    expect(component.selectedYear).toEqual(year);
-    expect(component.successLaunch).toEqual(true);
-    expect(component.successLanding).toEqual(false);
+    expect(comp.successLaunch).toEqual(true);
+    expect(comp.successLanding).toEqual(false);
       
   });
 });
