@@ -139,13 +139,9 @@ I have used the Agile methodology to develop the Web Application.
      1. Used Purify Css to remove the dead Css and Compression npm module to send the compressed sized to the client.
      1. Generated the lighthouse report and tested the application on locaohost.
 
-#### Screenshots of the lighthouse score before and after optimization with default filter Year=2006
+#### Screenshots of the lighthouse score after optimization with default filter Year=2006
 
-#### a. Before optimization. 
-  <img alt="after transfer state optimization" src="https://user-images.githubusercontent.com/25485584/96479338-70917380-1256-11eb-8ca2-c717cbc2708e.png" width="500" height="100">
-  
-
-#### b. After optimizing Transfer state using memory cache.
+#### After optimizing Transfer state using memory cache.
   <img alt="after compression and purify css optimization" src="https://user-images.githubusercontent.com/25485584/96479342-71c2a080-1256-11eb-9ff4-41e7b46195ac.png" width="500" height="100">
   
   
